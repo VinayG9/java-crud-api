@@ -1,5 +1,6 @@
 package com.smartContact.service;
 
+import com.smartContact.error.UserNotFoundException;
 import com.smartContact.model.User;
 import com.smartContact.repository.UserDao;
 
@@ -12,9 +13,11 @@ public interface UserService {
     public List<User> fetchUserList();
 
 
-   public User fetchUserById(int id);
+   public User fetchUserById(int id) throws UserNotFoundException;
 
     public void deleteUser(int id);
 
    public void updateUser(int id, User user);
+
+  public User getUserNameByName(String name);
 }
